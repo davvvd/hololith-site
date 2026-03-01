@@ -1,41 +1,45 @@
 ---
 # Display name
-title: Komang Januariyasa
+title: Full name
 
-# Full Name (for SEO)
-first_name: Komang
-last_name: Januariyasa
+# Full name (for SEO)
+first_name: name
+last_name: cognome
+
+# Username (this should match the folder name)
+authors:
+  - username
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: role
+role: your role
 
 # Organizations/Affiliations
 organizations:
-  - name: University of Naples "Federico II"
+  - name: institutional affiliation
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
 bio: short bio
 
 interests:
-  - Artificial Intelligence
-  - Quantum Computing
-
+  - interest 1
+  - interest 2
+  - interest 3
 
 education:
   courses:
-    - course: PhD student in Computational Intelligence
+    - course: PhD
       institution: University of Naples "Federico II"
-      year: 
-    - course: Master's degree in Artificial Intelligence
+      year: 2012
+    - course: Master degree
       institution: University of Naples "Federico II"
-      year: 2025
-    - course: Bachelor's degree in Physics
+      year: 2009
+    - course: Bachelor degree
       institution: University of Naples "Federico II"
-      year: 2021
+      year: 2008
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -44,27 +48,20 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:davide.romano@unina.it'
+    link: 'mailto:test@example.org'
+  
+  - icon: google-scholar
+    icon_pack: ai
+    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+
   - icon: github
     icon_pack: fab
-    link: https://github.com/davvvd
-    
-# Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
+    link: https://github.com/gcushen
 
-# Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ''
-
-# Highlight the author in author lists? (true/false)
-highlight_name: false
 
 # Organizational groups that you belong to (for People widget)
-#   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
   - Researchers
 ---
 
-PhD student in Computational Intelligence with a background in physics and data science. My previous work explored the intersection of artificial intelligence and quantum computing. I am currently contributing to the HyperMaSH project by developing machine learning approaches to derive simplified models of complex physical processes and to address challenges in a novel lithography technique.
+Longer bio
