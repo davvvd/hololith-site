@@ -13,7 +13,7 @@ authors:
 # Is this the primary user of the site?
 superuser: false
 
-# Role/position
+# Role/position 
 role: your role  # one or more in - Principal Investigators
                  #               - Researchers
                  #               - Grad Students

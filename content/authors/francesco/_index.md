@@ -14,7 +14,12 @@ authors:
 superuser: false
 
 # Role/position
-role: your role
+role: your role  # one or more in - Principal Investigators
+                 #               - Researchers
+                 #               - Grad Students
+                 #               - Administration
+                 #               - Visitors
+                 #               - Alumni
 
 # Organizations/Affiliations
 organizations:

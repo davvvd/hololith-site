@@ -13,8 +13,14 @@ authors:
 # Is this the primary user of the site?
 superuser: false
 
-# Role/position
-role: your role
+# Role/position 
+role: your role  # one or more in - Principal Investigators
+                 #               - Researchers
+                 #               - Grad Students
+                 #               - Administration
+                 #               - Visitors
+                 #               - Alumni
+
 
 # Organizations/Affiliations
 organizations:
@@ -61,7 +67,7 @@ social:
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-  - Researchers
+  - Principal Investigators
 ---
 
 Longer bio
