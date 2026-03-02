@@ -1,0 +1,25 @@
+{{ $affiliations := slice }}
+{{ with site.Params.header.affiliations.items }}
+  {{ $affiliations = . }}
+{{ end }}
+{{ $show_affiliations := and (ne site.Params.header.affiliations.enable false) (gt (len $affiliations) 0) }}
+{{ if $show_affiliations }}
+{{ $affiliation_logo_height := site.Params.header.affiliations.logo_height | default 30 }}
+<div class="affiliations-bar">
+  <div class="container-xl affiliations-bar-inner" style="--affiliations-count: {{ len $affiliations }};">
+    {{ range $affiliations }}
+      {{ $name := .name | default "Affiliation" }}
+      {{ $image := .image | default "" }}
+      {{ if $image }}
+        {{ $url := .url | default "" }}
+        {{ $new_tab := or (eq .new_tab true) (hasPrefix $url "http") }}
+        <div class="affiliations-item">
+          {{ if $url }}<a class="affiliations-link" href="{{ $url | relLangURL }}" aria-label="{{ $name }}" title="{{ $name }}"{{ if $new_tab }} target="_blank" rel="noopener"{{ end }}>{{ end }}
+            <img src="{{ $image | relURL }}" alt="{{ $name }}" style="max-height: {{ $affiliation_logo_height }}px; width: auto;">
+          {{ if $url }}</a>{{ end }}
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}
