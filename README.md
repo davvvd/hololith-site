@@ -30,41 +30,63 @@ Approved changes are automatically applied through continuous deployment.
 
 
 ## How to Update Your Personal Profile
-Your personal information is stored in ["**content/authors/**"](./content/authors). 
+Your personal information is stored in [**content/authors/**](./content/authors). 
 
 Each member has their own folder.
 
 ### Step 1 - Edit your information:
-- Go to ["**content/authors/**"](./content/authors)
-- Access your folder
-- Click on **_index.md** file
-- Click the ✏️ (Edit) button
-- Update your information
-  - Name
-  - Role
-  - Institutional affiliation
-  - Research interests
-  - Education
-  - Contacts
-  - Short/long bio
-- Click on **Committ changes**
-- Select **Create a new branch and open a pull request**
-- Submit the pull request
+1. Go to [**content/authors/**](./content/authors)
+2. Access your folder
+3. Click on **_index.md** file
+4. Click the ✏️ (Edit) button
+5. Update your information
+  >- Name
+  >- Role
+  >- Institutional affiliation
+  >- Research interests
+  >- Education
+  >- Contacts
+  >- Short/long bio
+6. Click on **Committ changes**
+7. Select **Create a new branch and open a pull request**
+8. Submit the pull request
 
 ### Step 2 - Update Your Profile Picture (if you do not like current one):
 1. Open your folder:
-["**content/authors/**"](./content/authors)
+[**content/authors/<your-name>**](./content/authors)
 2. Click on **avatar.jpg**.
-3. Click **Delete** this file.
-4. Commit the deletion (new branch).
-5. Upload your new avatar.jpg/png file.
-6. Commit and open a Pull Request.
+3. Upload your new avatar.jpg/png file.
+4. Click on **Committ changes**
+5. Select **Create a new branch and open a pull request**
+6. Submit the pull request
 
 ## How to Update Publications
 You have two different ways to update publications section.
 
 ### Option 1 (recommended):
-1. Open ["**publication.bib/**"](./publication.bib)
+1. Open [**publications.bib**](./publications.bib)
+2. Add new publication in BibTeX format
+3. Click on **Committ changes**
+4. Select **Create a new branch and open a pull request**
+5. Submit the pull request
+
+You can find your BibTeX citation on the journal site or manually write it respecting the proper format ([**BibTeX**](https://www.bibtex.com/g/bibtex-format/)).
+
+
+### Option 2:
+If for any reason you need to manually create a publication content you can follow the procedure below.
+
+1. Go to [**content/publication**](./content/publication)
+2. Open the proper folder based on your publication type
+3. Create a new publication content
+4. Click on **Committ changes**
+5. Select **Create a new branch and open a pull request**
+6. Submit the pull request
+
+
+
+
+
 
 ## Maintainer
 
