@@ -4,13 +4,18 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Appearance
-
 appearance:
-  theme_day: minimal
-  theme_night:
-  font: native
+  theme_day: hololith
+  theme_night: hololith
+  font: cyberpunk
   font_size: L
   accent_color: '#00f7ff'
+
+media:
+  # Featured image crop used by card views (e.g. Latest News, Projects).
+  card_fill: "1200x675"
+  # Default crop anchor for cards; can be overridden per page with `image.focal_point`.
+  card_focal_point: "Center"
 
 # SEO
 
@@ -43,6 +48,27 @@ header:
     show_day_night: true
     show_search: true
     highlight_active_link: false
+  affiliations:
+    enable: true
+    logo_height: 100
+    items:
+      # Put logo files in `static/media/affiliations/` and reference them as `/media/affiliations/file.ext`
+       - name: University of Naples Federico II
+         image: /media/affiliations/university_2.png
+         url: https://www.unina.it/
+         new_tab: true
+
+       - name: Department of Physics "Ettore Pancini"
+         image: /media/affiliations/department.png
+         url: https://www.fisica.unina.it/
+         new_tab: false
+
+       #- name: HoloLith
+       #  image: /media/affiliations/logo.png
+       #  url: https://www.hypermash.eu/
+       #  new_tab: false
+
+
 
 # Site footer
 
@@ -75,7 +101,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/<username>/<repository>'
+    url: 'https://github.com/davvvd/hololith-site'
     content_dir: content
     branch: main
   avatar:
