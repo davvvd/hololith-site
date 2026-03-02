@@ -46,8 +46,9 @@ Each member has their own folder.
   - Name
   - Role
   - Institutional affiliation
-  - Contacts
   - Research interests
+  - Education
+  - Contacts
   - Short/long bio
 - Click on **Committ changes**
 - Select **Create a new branch and open a pull request**
