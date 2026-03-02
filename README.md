@@ -1,4 +1,4 @@
-# HoloLith Website
+# HoloLith Website Repository
 Official website repository of the HoloLith Research Group.
 This website is built using Hugo and the HugoBlox Research Group framework.
 
@@ -26,6 +26,7 @@ Workflow:
 5. Changes are merged into main
 
 Direct edits to main are not allowed.
+
 
 
 
