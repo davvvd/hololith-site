@@ -26,11 +26,7 @@ Workflow:
 5. Changes are merged into main
 
 Direct edits to main are not allowed.
-
-
-
-
-
+Approved changes are automatically applied through continuous deployment.
 
 
 ## How to Update Your Personal Profile
@@ -54,5 +50,14 @@ Each member has their own folder.
 - Click on **Committ changes**
 - Select **Create a new branch and open a pull request**
 - Submit the pull request
+
+#### Step 2 - Update Your Profile Picture (if you do not like current one):
+1. Open your folder:
+["**content/authors/**"](./content/authors)
+2. Click on **avatar.jpg**.
+3. Click **Delete** this file.
+4. Commit the deletion (new branch).
+5. Upload your new avatar.jpg file.
+6. Commit and open a Pull Request.
 
 
