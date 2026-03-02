@@ -2,7 +2,7 @@
 
 title: Davide Romano
 role: PhD student
-bio: A short summary for blog posts.
+bio: 
 interests:
   - Computational Intelligence
   - Physics
