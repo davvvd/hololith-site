@@ -72,19 +72,14 @@ You have two different ways to update publications section.
 
 You can find your BibTeX citation on the journal site or manually write it respecting the proper format ([**BibTeX**](https://www.bibtex.com/g/bibtex-format/)).
 
-
 ### Option 2:
 If for any reason you need to manually create a publication content you can follow the procedure below.
 
 1. Go to [**content/publication**](./content/publication)
-2. Open the proper folder based on your publication type
-3. Create a new publication content
-4. Click on **Committ changes**
-5. Select **Create a new branch and open a pull request**
-6. Submit the pull request
-
-
-
+2. Create a new publication content based on the structure of existing ones
+3. Click on **Committ changes**
+4. Select **Create a new branch and open a pull request**
+5. Submit the pull request
 
 
 
