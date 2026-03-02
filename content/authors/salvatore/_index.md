@@ -1,41 +1,40 @@
 ---
 # Display name
-title: Full name
+title: Full name # <--------------
+
 
 # Full name (for SEO)
-first_name: name
-last_name: cognome
+first_name: name # <--------------
+last_name: cognome # <--------------
+
 
 # Username (this should match the folder name)
 authors:
-  - username
+  - username # <--------------
 
-# Is this the primary user of the site?
-superuser: false
 
 # Role/position
-role: your role  # one or more in - Principal Investigators
-                 #               - Researchers
-                 #               - Grad Students
-                 #               - Administration
-                 #               - Visitors
-                 #               - Alumni
+role: your role # <--------------
 
-
+                    
 # Organizations/Affiliations
 organizations:
-  - name: institutional affiliation
+  - name: institutional affiliation # <--------------
+    url: '' # <-------------- OPTIONAL
+  - name: ''
     url: ''
 
-# Short bio (displayed in user profile at end of posts)
+# Short bio (displayed in user profile preview)
 bio: short bio
 
-interests:
+
+interests: # <--------------
   - interest 1
   - interest 2
-  - interest 3
+  - interest 3 
 
-education:
+
+education: # <-------------- EDIT BELOW (YOU CAN ADD MORE ENTRIES)
   courses:
     - course: PhD
       institution: University of Naples "Federico II"
@@ -47,27 +46,32 @@ education:
       institution: University of Naples "Federico II"
       year: 2008
 
+
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
+
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:test@example.org'
+    link: 'mailto:test@example.org' # <--------------
   
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ # <--------------
 
   - icon: github
     icon_pack: fab
-    link: https://github.com/gcushen
+    link: https://github.com/gcushen # <--------------
 
 
-# Organizational groups that you belong to (for People widget)
+# Organizational groups that you belong to 
 user_groups:
-  - Researchers
+  - PhD Student  # <-------------- one or more in - Principal Investigator
+                 #                                - Researcher
+                 #                                - PhD Student
+                 #                                - Visitor
 ---
 
-Longer bio
+Longer bio # <--------------
