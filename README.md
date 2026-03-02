@@ -1,8 +1,8 @@
-# HoloLith Website
+# HoloLith Website Repository
 Official website repository of the HoloLith Research Group.
 This website is built using Hugo and the HugoBlox Research Group framework.
 
-#### All group members can update their profile information directly on GitHub.
+**All group members can update their profile information directly on GitHub.**
 
 ### 📌 Repository Structure
 
@@ -15,7 +15,7 @@ This repository contains:
 - Website configuration files
 
 ## Pull Request Policy
-### All changes must go through a Pull Request.
+**All changes must go through a Pull Request.**
 
 Workflow:
 
@@ -26,10 +26,7 @@ Workflow:
 5. Changes are merged into main
 
 Direct edits to main are not allowed.
-
-
-
-
+Approved changes are automatically applied through continuous deployment.
 
 
 ## How to Update Your Personal Profile
@@ -37,7 +34,7 @@ Your personal information is stored in ["**content/authors/**"](./content/author
 
 Each member has their own folder.
 
-#### Step 1 - Edit your information:
+### Step 1 - Edit your information:
 - Go to ["**content/authors/**"](./content/authors)
 - Access your folder
 - Click on **_index.md** file
@@ -46,11 +43,38 @@ Each member has their own folder.
   - Name
   - Role
   - Institutional affiliation
-  - Contacts
   - Research interests
+  - Education
+  - Contacts
   - Short/long bio
 - Click on **Committ changes**
 - Select **Create a new branch and open a pull request**
 - Submit the pull request
 
+### Step 2 - Update Your Profile Picture (if you do not like current one):
+1. Open your folder:
+["**content/authors/**"](./content/authors)
+2. Click on **avatar.jpg**.
+3. Click **Delete** this file.
+4. Commit the deletion (new branch).
+5. Upload your new avatar.jpg/png file.
+6. Commit and open a Pull Request.
+
+## How to Update Publications
+You have two different ways to update publications section.
+
+### Option 1 (recommended):
+1. Open ["**publication.bib/**"](./publication.bib)
+
+## Maintainer
+
+Repository maintained by:
+
+Davide Romano
+
+PhD student
+
+HoloLith Research Group
+
+For any issues or doubts, please contact the maintainer.
 
