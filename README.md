@@ -29,7 +29,7 @@ Direct edits to main are not allowed.
 Approved changes are automatically applied through continuous deployment.
 
 
-## How to Update Your Personal Profile
+## How to update your personal profile
 Your personal information is stored in [**content/authors/**](./content/authors). 
 
 Each member has their own folder.
@@ -51,7 +51,7 @@ Each member has their own folder.
 7. Select **Create a new branch and open a pull request**
 8. Submit the pull request
 
-### Step 2 - Update Your Profile Picture (if you do not like current one):
+### Step 2 - Update your profile picture (if you do not like the current one):
 1. Open your folder:
 [**content/authors/<your-name>**](./content/authors)
 2. Click on **avatar.jpg**.
@@ -60,7 +60,7 @@ Each member has their own folder.
 5. Select **Create a new branch and open a pull request**
 6. Submit the pull request
 
-## How to Update Publications
+## How to update publications
 You have two different ways to update publications section.
 
 ### Option 1 (recommended):
