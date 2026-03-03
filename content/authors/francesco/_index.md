@@ -1,50 +1,50 @@
 ---
 # Display name
-title: Full name # <--------------
+title: Francesco Reda # <--------------
 
 
 # Full name (for SEO)
-first_name: name # <--------------
-last_name: cognome # <--------------
+first_name: Francesco # <--------------
+last_name: Reda # <--------------
 
 
 # Username (this should match the folder name)
 authors:
-  - username # <--------------
+  - francesco # <--------------
 
 
 # Role/position
-role: your role # <--------------
+role: PostDoc # <--------------
 
                     
 # Organizations/Affiliations
 organizations:
-  - name: institutional affiliation # <--------------
+  - name: University of Naples Federico II # <--------------
     url: '' # <-------------- OPTIONAL
   - name: ''
     url: ''
 
 # Short bio (displayed in user profile preview)
-bio: short bio
+bio: I’m a physicist who earned a Ph.D. in Quantum Technologies in 2024. My research focuses on computer-generated holograms, reconfigurable diffractive optical elements, and azopolymer photomorphing for flat optics fabrication. While my holograms work perfectly for patterning photosensitive materials, they still don’t float in mid-air like they do in Star Wars, … at least not yet!
 
 
 interests: # <--------------
-  - interest 1
-  - interest 2
-  - interest 3 
+  - Digital holography
+  - Diffractive optics
+  - Lithography 
 
 
 education: # <-------------- EDIT BELOW (YOU CAN ADD MORE ENTRIES)
   courses:
-    - course: PhD
+    - course: PhD in Quantum Technologies
       institution: University of Naples "Federico II"
-      year: 2012
-    - course: Master degree
+      year: 2024
+    - course: Master degree in Physics
       institution: University of Naples "Federico II"
-      year: 2009
-    - course: Bachelor degree
+      year: 2020
+    - course: Bachelor degree in Physics
       institution: University of Naples "Federico II"
-      year: 2008
+      year: 2017
 
 
 # Social/Academic Networking
@@ -55,11 +55,11 @@ education: # <-------------- EDIT BELOW (YOU CAN ADD MORE ENTRIES)
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:test@example.org' # <--------------
+    link: 'mailto:francesco.reda@unina.it' # <--------------
   
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ # <--------------
+    link: https://scholar.google.com/citations?user=jP-WSGcAAAAJ&hl=it # <--------------
 
   - icon: github
     icon_pack: fab
@@ -68,10 +68,10 @@ social:
 
 # Organizational groups that you belong to 
 user_groups:
-  - Researcher  # <-------------- one or more in - Principal Investigator
+  - Researcher   # <-------------- one or more in - Principal Investigator
                  #                                - Researcher
                  #                                - PhD Student
                  #                                - Visitor
 ---
 
-Longer bio # <--------------
+Longer bio: Francesco Reda received his PhD in Quantum Technologies in 2024 from the University of Naples Federico II, with a dissertation on reprogrammable flat optics based on maskless photomorphing of azopolymers. Since then, he has been working as a postdoctoral researcher at the same institution, developing holographic techniques for the fabrication of functionalized surfaces. His research has contributed to the advancement of azomaterial-based lithography, a breakthrough approach that enables the fabrication of stable and reconfigurable flat diffractive optical elements with arbitrary light responses. His academic background includes expertise in computer-generated holography, optical lithography, and diffractive optics. # <--------------
