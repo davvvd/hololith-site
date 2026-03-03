@@ -56,10 +56,6 @@ social:
   - icon: envelope
     icon_pack: fas
     link: 'mailto:miriam.alberico@unina.it' # <--------------
-  
-  - icon: google-scholar
-    icon_pack: ai
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ # <--------------
 
 
 # Organizational groups that you belong to 
