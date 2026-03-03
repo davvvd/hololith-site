@@ -70,7 +70,7 @@ You have two different ways to update publications section.
 4. Select **Create a new branch and open a pull request**
 5. Submit the pull request
 
-You can find your BibTeX citation on [**Zotero HoloLith Library**](https://www.zotero.org/groups/6421238/hololith_digital_library), on the journal site or manually write it respecting the proper format [**BibTeX**](https://www.bibtex.com/g/bibtex-format/).
+You can find your BibTeX citation on [**Zotero HoloLith Library**](https://www.zotero.org/groups/6421238/hololith_digital_library), on the journal site or manually write it respecting the proper [**format**](https://www.bibtex.com/g/bibtex-format/).
 
 ### Option 2:
 If for any reason you need to manually create a publication content you can follow the procedure below.
