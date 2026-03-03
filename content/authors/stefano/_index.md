@@ -1,28 +1,28 @@
 ---
 # Display name
-title: Full name # <--------------
+title: Stefano Oscurato
 
 
 # Full name (for SEO)
-first_name: name # <--------------
-last_name: cognome # <--------------
+first_name: Stefano 
+last_name: Oscurato 
 
 
 # Username (this should match the folder name)
 authors:
-  - stefano # <--------------
+  - stefano
 
 
 # Role/position
-role: your role # <--------------
+role: Principal Investigator 
 
                     
 # Organizations/Affiliations
 organizations:
-  - name: institutional affiliation # <--------------
-    url: '' # <-------------- OPTIONAL
-  - name: ''
-    url: ''
+  - name: University of Naples "Federico II" 
+    url: 'https://www.fisica.unina.it/'
+  - name: ''  # <-------------- OPTIONAL
+    url: ''  # <-------------- OPTIONAL
 
 # Short bio (displayed in user profile preview)
 bio: short bio
@@ -55,15 +55,15 @@ education: # <-------------- EDIT BELOW (YOU CAN ADD MORE ENTRIES)
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:test@example.org' # <--------------
+    link: 'mailto:stefanoluigi.oscurato@unina.it' # 
   
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ # <--------------
+    link: https://scholar.google.it/citations?user=OxnOrTcAAAAJ&hl=it
 
   - icon: github
     icon_pack: fab
-    link: https://github.com/gcushen # <--------------
+    link: '' # <-------------- OPTIONAL
 
 
 # Organizational groups that you belong to 
