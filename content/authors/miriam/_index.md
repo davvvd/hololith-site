@@ -1,50 +1,50 @@
 ---
 # Display name
-title: Full name # <--------------
+title: Miriam Alberico # <--------------
 
 
 # Full name (for SEO)
-first_name: name # <--------------
-last_name: cognome # <--------------
+first_name: Miriam #<--------------
+last_name: Alberico #<--------------
 
 
 # Username (this should match the folder name)
 authors:
-  - username # <--------------
+  - miriam # <--------------
 
 
 # Role/position
-role: your role # <--------------
+role: Post-Doc # <--------------
 
                     
 # Organizations/Affiliations
 organizations:
-  - name: institutional affiliation # <--------------
-    url: '' # <-------------- OPTIONAL
+  - name: University of Naples Federico II # <--------------
+    url: https://www.unina.it/it/ # <-------------- OPTIONAL
   - name: ''
     url: ''
 
 # Short bio (displayed in user profile preview)
-bio: short bio
+bio: I am a chemist with a PhD dedicated to the development and the integration of analytical techniques to study organic and polymeric materials. My research aims to investigate and analyze the correlation between materials physico-chemical properties and behaviour, thus contributing to their advancement for future technological applications. When I am not experimenting in the lab, you will most likely find me rewatching Harry Potter movies for the umpteenth time!
 
 
 interests: # <--------------
-  - interest 1
-  - interest 2
-  - interest 3 
+  - Analytical Chemistry of Materials
+  - Molecular and Spectroscopic Characterization of Materials
+  - Optimization and integration of multi-analytical methods
 
 
 education: # <-------------- EDIT BELOW (YOU CAN ADD MORE ENTRIES)
   courses:
-    - course: PhD
+    - course: PhD in Heritage Science
+      institution: University of Rome "La Sapienza"
+      year: 2026
+    - course: Master degree in Chemical Sciences
       institution: University of Naples "Federico II"
-      year: 2012
-    - course: Master degree
+      year: 2022
+    - course: Bachelor degree in Chemistry
       institution: University of Naples "Federico II"
-      year: 2009
-    - course: Bachelor degree
-      institution: University of Naples "Federico II"
-      year: 2008
+      year: 2020
 
 
 # Social/Academic Networking
@@ -55,20 +55,16 @@ education: # <-------------- EDIT BELOW (YOU CAN ADD MORE ENTRIES)
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:test@example.org' # <--------------
+    link: 'mailto:miriam.alberico@unina.it' # <--------------
   
   - icon: google-scholar
     icon_pack: ai
     link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ # <--------------
 
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/gcushen # <--------------
-
 
 # Organizational groups that you belong to 
 user_groups:
-  - Researcher  # <-------------- one or more in - Principal Investigator
+  - Researcher   # <-------------- one or more in - Principal Investigator
                  #                                - Researcher
                  #                                - PhD Student
                  #                                - Visitor
