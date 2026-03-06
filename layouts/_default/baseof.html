@@ -77,6 +77,11 @@
   </div>
 
   {{ partial "site_js" . }}
+  {{ $motion_js := resources.Get "js/site-motion.js" }}
+  {{ if hugo.IsProduction }}
+    {{ $motion_js = $motion_js | minify | fingerprint "md5" }}
+  {{ end }}
+  <script src="{{ $motion_js.RelPermalink }}" defer></script>
 
 </body>
 </html>

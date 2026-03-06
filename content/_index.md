@@ -22,10 +22,8 @@ sections:
       user_groups:
         - Principal Investigators
         - Researchers
-        - Grad Students
-        - Administration
+        - PhD Students
         - Visitors
-        - Alumni
       sort_by: Params.last_name
       sort_ascending: true
       text: |
@@ -72,6 +70,7 @@ sections:
     design:
       view: card
       columns: '2'
+      css_class: latest-news-grid
 
   - block: collection
     content:

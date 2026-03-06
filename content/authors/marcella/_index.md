@@ -59,11 +59,9 @@ social:
   
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ](https://scholar.google.com/citations?user=t7Z3NisAAAAJ&hl=it&oi=ao # <--------------
+    link: 'https://scholar.google.it/citations?hl=it&user=t7Z3NisAAAAJ'
 
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/gcushen # <--------------
+ 
 
 
 # Organizational groups that you belong to 
@@ -74,6 +72,6 @@ user_groups:
                  #                                - Visitors
 ---
 
-Longer bio: Marcella Salvatore received her M.Sc. in Materials Engineering in 2013 and earned a Ph.D. in Industrial Product and Processes Engineering from the University of Naples in 2017. Her research centers on azomaterials surface engineering, with a particular emphasis on tuning surface functionality through innovative surface designs. She investigates mass-transport phenomena in azomaterials and develops functional surfaces aimed at applications such as wettability control, optical components, and photonics-related devices.
+Marcella Salvatore received her M.Sc. in Materials Engineering in 2013 and earned a Ph.D. in Industrial Product and Processes Engineering from the University of Naples in 2017. Her research centers on azomaterials surface engineering, with a particular emphasis on tuning surface functionality through innovative surface designs. She investigates mass-transport phenomena in azomaterials and develops functional surfaces aimed at applications such as wettability control, optical components, and photonics-related devices.
 
-With a strong materials-science background, she has contributed to multiple cutting-edge research projects and regularly disseminates her results at international conferences in materials science, optics, and photonics. Marcella has published 45 peer-reviewed articles in leading scientific journals and currently has an h-index of 15, reflecting her sustained impact in the field.# <--------------
+With a strong materials-science background, she has contributed to multiple cutting-edge research projects and regularly disseminates her results at international conferences in materials science, optics, and photonics. Marcella has published 45 peer-reviewed articles in leading scientific journals and currently has an h-index of 15, reflecting her sustained impact in the field.
