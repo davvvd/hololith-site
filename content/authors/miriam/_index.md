@@ -60,7 +60,7 @@ social:
 
 # Organizational groups that you belong to 
 user_groups:
-  - Researcher   # <-------------- one or more in - Principal Investigator
+  - Researchers   # <-------------- one or more in - Principal Investigator
                  #                                - Researcher
                  #                                - PhD Student
                  #                                - Visitor

@@ -68,10 +68,10 @@ social:
 
 # Organizational groups that you belong to 
 user_groups:
-  - Researcher  # <-------------- one or more in - Principal Investigator
-                 #                                - Researcher
-                 #                                - PhD Student
-                 #                                - Visitor
+  - Researchers  # <-------------- one or more in - Principal Investigators
+                 #                                - Researchers
+                 #                                - PhD Students
+                 #                                - Visitors
 ---
 
 Longer bio: Marcella Salvatore received her M.Sc. in Materials Engineering in 2013 and earned a Ph.D. in Industrial Product and Processes Engineering from the University of Naples in 2017. Her research centers on azomaterials surface engineering, with a particular emphasis on tuning surface functionality through innovative surface designs. She investigates mass-transport phenomena in azomaterials and develops functional surfaces aimed at applications such as wettability control, optical components, and photonics-related devices.

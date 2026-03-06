@@ -67,7 +67,7 @@ highlight_name: false
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - PhD Student
+  - PhD Students
 ---
 
 PhD student in Computational Intelligence with a background in physics and data science. My previous work explored the intersection of artificial intelligence and quantum computing. I am currently contributing to the HyperMaSH project by developing machine learning approaches to derive simplified models of complex physical processes and to address challenges in a novel lithography technique.

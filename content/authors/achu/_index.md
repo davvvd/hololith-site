@@ -68,7 +68,7 @@ social:
 
 # Organizational groups that you belong to 
 user_groups:
-  - PhD Student  # <-------------- one or more in - Principal Investigator
+  - PhD Students  # <-------------- one or more in - Principal Investigator
                  #                                - Researcher
                  #                                - PhD Student
                  #                                - Visitor

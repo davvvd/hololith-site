@@ -68,10 +68,10 @@ social:
 
 # Organizational groups that you belong to 
 user_groups:
-  - Principal Investigator  # <-------------- one or more in - Principal Investigator
-                 #                                - Researcher
-                 #                                - PhD Student
-                 #                                - Visitor
+  - Principal Investigators # <-------------- one or more in - Principal Investigators
+                 #                                - Researchers
+                 #                                - PhD Students
+                 #                                - Visitors
 ---
 
 Longer bio # <--------------

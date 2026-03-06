@@ -66,10 +66,10 @@ social:
 
 # Organizational groups that you belong to 
 user_groups:
-  - Researcher   # <-------------- one or more in - Principal Investigator
-                 #                                - Researcher
-                 #                                - PhD Student
-                 #                                - Visitor
+  - Researchers  # <-------------- one or more in - Principal Investigators
+                 #                                - Researchers
+                 #                                - PhD Students
+                 #                                - Visitors
 ---
 
 Longer bio: Francesco Reda received his PhD in Quantum Technologies in 2024 from the University of Naples Federico II, with a dissertation on reprogrammable flat optics based on maskless photomorphing of azopolymers. Since then, he has been working as a postdoctoral researcher at the same institution, developing holographic techniques for the fabrication of functionalized surfaces. His research has contributed to the advancement of azomaterial-based lithography, a breakthrough approach that enables the fabrication of stable and reconfigurable flat diffractive optical elements with arbitrary light responses. His academic background includes expertise in computer-generated holography, optical lithography, and diffractive optics. # <--------------
