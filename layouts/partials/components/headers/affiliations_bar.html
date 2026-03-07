@@ -10,12 +10,16 @@
     {{ range $affiliations }}
       {{ $name := .name | default "Affiliation" }}
       {{ $image := .image | default "" }}
+      {{ $image_dark := .image_dark | default "" }}
       {{ if $image }}
         {{ $url := .url | default "" }}
         {{ $new_tab := or (eq .new_tab true) (hasPrefix $url "http") }}
-        <div class="affiliations-item">
+        <div class="affiliations-item{{ if $image_dark }} has-dark-logo{{ end }}">
           {{ if $url }}<a class="affiliations-link" href="{{ $url | relLangURL }}" aria-label="{{ $name }}" title="{{ $name }}"{{ if $new_tab }} target="_blank" rel="noopener"{{ end }}>{{ end }}
-            <img src="{{ $image | relURL }}" alt="{{ $name }}" style="max-height: {{ $affiliation_logo_height }}px; width: auto;">
+            <img class="affiliations-logo affiliations-logo--light" src="{{ $image | relURL }}" alt="{{ $name }}" style="max-height: {{ $affiliation_logo_height }}px; width: auto;">
+            {{ if $image_dark }}
+            <img class="affiliations-logo affiliations-logo--dark" src="{{ $image_dark | relURL }}" alt="{{ $name }}" style="max-height: {{ $affiliation_logo_height }}px; width: auto;">
+            {{ end }}
           {{ if $url }}</a>{{ end }}
         </div>
       {{ end }}

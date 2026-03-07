@@ -13,7 +13,11 @@
   {{ $affiliations = . }}
 {{ end }}
 {{ $show_affiliations := and (ne site.Params.header.affiliations.enable false) (gt (len $affiliations) 0) }}
-<body id="top" data-spy="scroll" {{ if $show_navbar }}data-offset="70"{{end}} data-target="{{ if or .IsHome (eq .Type "widget_page") | and $highlight_active_link }}#navbar-main{{else}}#TableOfContents{{end}}" class="page-wrapper {{with .Params.design.css_class}}{{.}}{{end}} {{ if not (.Scratch.Get "light") }}dark{{end}} {{ if not $show_navbar }}no-navbar{{end}} {{ if $show_affiliations }}has-affiliations-bar{{end}}" {{with .File}}data-wc-page-id="{{.UniqueID}}"{{end}} {{with .Params.design.css_style}}style="{{. | safeCSS}}"{{end}}>
+{{ $bg_webm_exists := fileExists "static/media/backgrounds/animated-bg.webm" }}
+{{ $bg_mp4_exists := fileExists "static/media/backgrounds/animated-bg.mp4" }}
+{{ $bg_gif_exists := fileExists "static/media/backgrounds/animated-bg.gif" }}
+{{ $show_animated_bg := or (or $bg_webm_exists $bg_mp4_exists) $bg_gif_exists }}
+<body id="top" data-spy="scroll" {{ if $show_navbar }}data-offset="70"{{end}} data-target="{{ if or .IsHome (eq .Type "widget_page") | and $highlight_active_link }}#navbar-main{{else}}#TableOfContents{{end}}" class="page-wrapper {{with .Params.design.css_class}}{{.}}{{end}} {{ if not (.Scratch.Get "light") }}dark{{end}} {{ if not $show_navbar }}no-navbar{{end}} {{ if $show_affiliations }}has-affiliations-bar{{end}} {{ if $show_animated_bg }}has-animated-bg{{end}}" {{with .File}}data-wc-page-id="{{.UniqueID}}"{{end}} {{with .Params.design.css_style}}style="{{. | safeCSS}}"{{end}}>
 
   {{/* Initialise Hugo Blox. */}}
   {{ $js_license := printf "/*! Hugo Blox Builder v%s | https://hugoblox.com/ */\n" site.Data.hugoblox.version }}
@@ -41,40 +45,57 @@
     {{ partial "components/announcement_bar" . }}
   {{ end -}}
 
-  {{ partial "components/headers/affiliations_bar" . }}
-
-  <div class="page-header header--fixed">
-  {{/* Load header block */}}
-  {{ $block_name := .Params.header.navbar.block | default site.Params.header.navbar.block | default "navbar" }}
-  {{ $block_path := printf "components/headers/%s.html" $block_name }}
-  {{ if not (templates.Exists (printf "partials/%s" $block_path)) }}
-    {{ errorf "Check your `header` config in `params.yaml` and/or front matter. Cannot find header block at `layouts/partials/%s`" $block_path }}
+  {{ if $show_animated_bg }}
+  <div class="animated-bg page-background-stage" aria-hidden="true">
+    {{ if or $bg_webm_exists $bg_mp4_exists }}
+      <video class="animated-bg__media" autoplay muted loop playsinline preload="metadata">
+        {{ if $bg_webm_exists }}<source src="{{ "media/backgrounds/animated-bg.webm" | relURL }}" type="video/webm">{{ end }}
+        {{ if $bg_mp4_exists }}<source src="{{ "media/backgrounds/animated-bg.mp4" | relURL }}" type="video/mp4">{{ end }}
+      </video>
+    {{ else if $bg_gif_exists }}
+      <img class="animated-bg__media" src="{{ "media/backgrounds/animated-bg.gif" | relURL }}" alt="" loading="eager" decoding="async">
+    {{ end }}
+  </div>
   {{ end }}
-  {{ partial $block_path . }}
-  </div>
 
-  <div class="page-body">
-    {{/* Breadcrumb */}}
-    {{/* Don't apply to Book layout as that has different breadcrumb placement. */}}
-    {{ if .Params.show_breadcrumb | and (ne .Type "book") }}
-      <!-- Use page bg color rather than any color applied to article-container. -->
-      {{ $class := cond .IsSection "universal-wrapper" "article-container" }}
-      <div class="{{$class}} py-1" style="background: initial">
-        {{ partial "components/breadcrumb" . }}
-      </div>
+  <div class="page-chrome">
+    {{ partial "components/headers/affiliations_bar" . }}
+
+    <div class="page-header header--fixed">
+    {{/* Load header block */}}
+    {{ $block_name := .Params.header.navbar.block | default site.Params.header.navbar.block | default "navbar" }}
+    {{ $block_path := printf "components/headers/%s.html" $block_name }}
+    {{ if not (templates.Exists (printf "partials/%s" $block_path)) }}
+      {{ errorf "Check your `header` config in `params.yaml` and/or front matter. Cannot find header block at `layouts/partials/%s`" $block_path }}
     {{ end }}
-
-    {{ block "main" . }}{{ end }}
-  </div>
-
-  <div class="page-footer">
-    {{/* Docs and Updates layouts include the site footer in a different location. */}}
-    {{ if not (in (slice "book" "docs" "updates") .Type) }}
-    <div class="container">
-      {{ partial "site_footer" . }}
+    {{ partial $block_path . }}
     </div>
-    {{ end }}
   </div>
+
+  <main class="page-main">
+    <div class="page-body">
+      {{/* Breadcrumb */}}
+      {{/* Don't apply to Book layout as that has different breadcrumb placement. */}}
+      {{ if .Params.show_breadcrumb | and (ne .Type "book") }}
+        <!-- Use page bg color rather than any color applied to article-container. -->
+        {{ $class := cond .IsSection "universal-wrapper" "article-container" }}
+        <div class="{{$class}} py-1" style="background: initial">
+          {{ partial "components/breadcrumb" . }}
+        </div>
+      {{ end }}
+
+      {{ block "main" . }}{{ end }}
+    </div>
+
+    <div class="page-footer">
+      {{/* Docs and Updates layouts include the site footer in a different location. */}}
+      {{ if not (in (slice "book" "docs" "updates") .Type) }}
+      <div class="container">
+        {{ partial "site_footer" . }}
+      </div>
+      {{ end }}
+    </div>
+  </main>
 
   {{ partial "site_js" . }}
   {{ $motion_js := resources.Get "js/site-motion.js" }}

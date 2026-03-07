@@ -61,9 +61,9 @@ social:
     icon_pack: ai
     link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ # <--------------
 
-  - icon: github
+  - icon: orcid
     icon_pack: fab
-    link: https://github.com/gcushen # <--------------
+    link: 'https://orcid.org/0000-0001-8812-5294'
 
 
 # Organizational groups that you belong to 

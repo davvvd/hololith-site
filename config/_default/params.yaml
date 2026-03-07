@@ -53,15 +53,17 @@ header:
     logo_height: 100
     items:
       # Put logo files in `static/media/affiliations/` and reference them as `/media/affiliations/file.ext`
-       - name: University of Naples Federico II
-         image: /media/affiliations/university_2.png
-         url: https://www.unina.it/
-         new_tab: true
+      - name: University of Naples Federico II
+        image: /media/affiliations/university.png
+        image_dark: /media/affiliations/university_dark.png
+        url: https://www.unina.it/
+        new_tab: true
 
-       - name: Department of Physics "Ettore Pancini"
-         image: /media/affiliations/department.png
-         url: https://www.fisica.unina.it/
-         new_tab: false
+      - name: Department of Physics "Ettore Pancini"
+        image: /media/affiliations/department_.png
+        image_dark: /media/affiliations/department_dark.png
+        url: https://www.fisica.unina.it/
+        new_tab: false
 
        #- name: HoloLith
        #  image: /media/affiliations/logo.png

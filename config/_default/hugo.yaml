@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: HoloLith # Website name
-baseURL: 'https://example.com/' # Website URL
+baseURL: 'https://hololith-lab.unina.it/' # Website URL
 
 ############################
 ## LANGUAGE
