@@ -38,6 +38,19 @@
   --section-side-gap-mobile: 1.4rem;
 }
 
+/* Dark theme variable overrides – changing these switches text colors globally */
+body.dark {
+  --text-strong: rgba(255,255,255,0.92);
+  --text-muted: rgba(255,255,255,0.72);
+}
+
+/* ensure section headings also turn light in dark mode (backup in case variables fail) */
+.dark .section-heading h1,
+.dark .section-heading h2,
+.dark .section-heading h3 {
+  color: rgba(255,255,255,0.92) !important;
+}
+
 body {
   font-family: var(--site-font-family, inherit);
   color: var(--text-strong);
@@ -412,6 +425,18 @@ footer {
   box-shadow: 0 14px 34px rgba(20, 28, 46, 0.12);
   overflow: hidden;
   transition: box-shadow var(--motion-slow) var(--motion-ease), transform var(--motion-mid) var(--motion-ease);
+}
+
+/* Dark theme for home sections (apply same switching behaviour as news/project cards) */
+.dark .home-section {
+  /* use a semi-transparent dark surface similar to card backgrounds */
+  background: linear-gradient(180deg, rgba(34, 40, 60, 0.92), rgba(19, 21, 31, 0.9)) !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.dark .home-section:hover,
+.dark .home-section:focus-within {
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.36);
 }
 
 .home-section-bg {

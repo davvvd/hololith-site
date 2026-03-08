@@ -55,7 +55,10 @@ education: # <-------------- EDIT BELOW (YOU CAN ADD MORE ENTRIES)
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:miriam.alberico@unina.it' # <--------------
+    link: 'mailto:miriam.alberico@unina.it' 
+  - icon: orcid
+    icon_pack: fab
+    link: 'https://orcid.org/0009-0008-7835-8666'
 
 
 # Organizational groups that you belong to 

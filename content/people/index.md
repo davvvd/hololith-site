@@ -15,6 +15,7 @@ sections:
           - Researchers
           - PhD Students
           - Visitors
+          - Collaborators
       sort_by: Params.last_name
       sort_ascending: true
     design:
