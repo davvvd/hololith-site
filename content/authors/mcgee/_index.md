@@ -73,9 +73,6 @@ user_groups:
                  #                                - Researcher
                  #                                - PhD Student
                  #                                - Visitor
-
-# Do not create a personal profile page
-no_profile: true
 ---
 
 Longer bio # <--------------

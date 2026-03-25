@@ -1,0 +1,27 @@
+<script>
+  (function() {
+    try {
+      const legacyTheme = localStorage.getItem('wc-theme');
+      const savedTheme = localStorage.getItem('wcTheme') || (
+        legacyTheme === 'dark' ? '1' :
+        legacyTheme === 'light' ? '0' :
+        legacyTheme
+      );
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+      let shouldUseDark = false;
+      if (savedTheme === '1') {
+        shouldUseDark = true;
+      } else if (savedTheme === '0') {
+        shouldUseDark = false;
+      } else if (prefersDark && !prefersLight) {
+        shouldUseDark = true;
+      }
+
+      document.documentElement.classList.toggle('dark', shouldUseDark);
+    } catch (e) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>

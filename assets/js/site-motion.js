@@ -124,6 +124,12 @@ function initAnimatedBackgroundMedia() {
   if (!media) {
     return;
   }
+  const animatedBackground = media.closest(".animated-bg");
+  const markLoaded = () => {
+    if (animatedBackground) {
+      animatedBackground.classList.add("is-loaded");
+    }
+  };
 
   const tryPlay = () => {
     const promise = media.play();
@@ -134,6 +140,9 @@ function initAnimatedBackgroundMedia() {
     }
   };
 
+  media.addEventListener("loadeddata", markLoaded, { once: true });
+  media.addEventListener("canplay", markLoaded, { once: true });
+  media.addEventListener("error", markLoaded, { once: true });
   tryPlay();
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) {
@@ -150,9 +159,11 @@ function initThemeToggle() {
 
   const sunIcon = themeToggleBtn.querySelector(".fa-sun");
   const moonIcon = themeToggleBtn.querySelector(".fa-moon");
+  const themeRoot = document.documentElement;
+  const isDarkTheme = () => themeRoot.classList.contains("dark") || document.body.classList.contains("dark");
   
   const updateThemeIcon = () => {
-    const isDark = document.body.classList.contains("dark");
+    const isDark = isDarkTheme();
     if (isDark) {
       sunIcon.classList.add("hidden");
       moonIcon.classList.remove("hidden");
@@ -164,19 +175,19 @@ function initThemeToggle() {
 
   themeToggleBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    const isDark = document.body.classList.contains("dark");
-    
-    // Toggle dark class on body
-    document.body.classList.toggle("dark");
-    
-    // Save preference to localStorage
-    const newTheme = document.body.classList.contains("dark") ? "dark" : "light";
-    localStorage.setItem("wc-theme", newTheme);
+    const nextIsDark = !isDarkTheme();
+
+    themeRoot.classList.toggle("dark", nextIsDark);
+    document.body.classList.toggle("dark", nextIsDark);
+
+    const newTheme = nextIsDark ? "1" : "0";
+    localStorage.setItem("wcTheme", newTheme);
+    localStorage.removeItem("wc-theme");
     
     updateThemeIcon();
   });
 
-  // Update icon on page load
+  // Update icon on page load (theme is already applied via inline script)
   updateThemeIcon();
 }
 

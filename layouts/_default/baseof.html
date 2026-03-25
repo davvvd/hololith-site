@@ -17,7 +17,7 @@
 {{ $bg_mp4_exists := fileExists "static/media/backgrounds/animated-bg.mp4" }}
 {{ $bg_gif_exists := fileExists "static/media/backgrounds/animated-bg.gif" }}
 {{ $show_animated_bg := or (or $bg_webm_exists $bg_mp4_exists) $bg_gif_exists }}
-<body id="top" data-spy="scroll" {{ if $show_navbar }}data-offset="70"{{end}} data-target="{{ if or .IsHome (eq .Type "widget_page") | and $highlight_active_link }}#navbar-main{{else}}#TableOfContents{{end}}" class="page-wrapper {{with .Params.design.css_class}}{{.}}{{end}} {{ if not (.Scratch.Get "light") }}dark{{end}} {{ if not $show_navbar }}no-navbar{{end}} {{ if $show_affiliations }}has-affiliations-bar{{end}} {{ if $show_animated_bg }}has-animated-bg{{end}}" {{with .File}}data-wc-page-id="{{.UniqueID}}"{{end}} {{with .Params.design.css_style}}style="{{. | safeCSS}}"{{end}}>
+<body id="top" data-spy="scroll" {{ if $show_navbar }}data-offset="70"{{end}} data-target="{{ if or .IsHome (eq .Type "widget_page") | and $highlight_active_link }}#navbar-main{{else}}#TableOfContents{{end}}" class="page-wrapper {{with .Params.design.css_class}}{{.}}{{end}} {{ if not $show_navbar }}no-navbar{{end}} {{ if $show_affiliations }}has-affiliations-bar{{end}} {{ if $show_animated_bg }}has-animated-bg{{end}}" {{with .File}}data-wc-page-id="{{.UniqueID}}"{{end}} {{with .Params.design.css_style}}style="{{. | safeCSS}}"{{end}}>
 
   {{/* Initialise Hugo Blox. */}}
   {{ $js_license := printf "/*! Hugo Blox Builder v%s | https://hugoblox.com/ */\n" site.Data.hugoblox.version }}
@@ -25,7 +25,7 @@
   {{ $js_license := $js_license | printf "%s/*! License: https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md */\n" }}
   {{ $js_bundle_head := $js_license | resources.FromString "js/bundle-head.js" }}
   {{ $wcDarkLightEnabled := (and site.Params.appearance.theme_day site.Params.appearance.theme_night) }}
-  {{ $wcIsSiteThemeDark := not (.Scratch.Get "light") | default false }}
+  {{ $wcIsSiteThemeDark := false }}
   {{ $js_params := dict "wcDarkLightEnabled" $wcDarkLightEnabled "wcIsSiteThemeDark" $wcIsSiteThemeDark }}
   {{ $js_bundle := resources.Get "js/wowchemy-init.js" | js.Build (dict "params" $js_params) }}
   {{- if hugo.IsProduction -}}

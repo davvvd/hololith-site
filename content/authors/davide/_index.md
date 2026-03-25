@@ -34,7 +34,7 @@ education:
     - course: PhD student in Computational Intelligence
       institution: University of Naples "Federico II"
       year: 
-    - course: Master's degree in Artificial Intelligence
+    - course: Master's degree in Data Science
       institution: University of Naples "Federico II"
       year: 2025
     - course: Bachelor's degree in Physics

@@ -38,7 +38,16 @@
   --section-side-gap-mobile: 1.4rem;
 }
 
-/* Dark theme variable overrides – changing these switches text colors globally */
+html {
+  background-color: var(--surface-base);
+}
+
+html.dark {
+  background-color: #10121a;
+}
+
+/* Dark theme variable overrides - changing these switches text colors globally */
+html.dark,
 body.dark {
   --text-strong: rgba(255,255,255,0.92);
   --text-muted: rgba(255,255,255,0.72);
@@ -105,6 +114,17 @@ a:focus-visible {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(130, 0, 200, 0.12), transparent 34%),
+    radial-gradient(circle at 18% 22%, rgba(0, 247, 255, 0.1), transparent 28%),
+    linear-gradient(180deg, rgba(246, 248, 252, 0.96), rgba(235, 240, 248, 0.98));
+}
+
+html.dark .page-background-stage {
+  background:
+    radial-gradient(circle at top right, rgba(130, 0, 200, 0.18), transparent 34%),
+    radial-gradient(circle at 18% 22%, rgba(0, 247, 255, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(16, 18, 26, 0.98), rgba(11, 13, 19, 0.99));
 }
 
 .page-chrome {
@@ -146,6 +166,12 @@ a:focus-visible {
   max-height: none !important;
   object-fit: cover !important;
   filter: saturate(1.04) contrast(1.03);
+  opacity: 0;
+  transition: opacity var(--motion-mid) ease;
+}
+
+.animated-bg.is-loaded .animated-bg__media {
+  opacity: 1;
 }
 
 .animated-bg::after {
