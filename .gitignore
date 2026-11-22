@@ -5,3 +5,26 @@
 /resources/
 public/
 assets/jsconfig.json
+
+# Local development and temporary imports
+.tmp/
+backups/
+
+# Local source copy of the game
+/VideoGame/
+
+# Temporary patch notes
+/SCSS_FIX_README.txt
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+*.pem
+
+# Node dependencies
+node_modules/
+
+# Local editor and OS files
+.DS_Store
+Thumbs.db

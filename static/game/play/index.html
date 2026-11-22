@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Photon Runner is a browser arcade game inspired by azobenzene photoisomerization, molecular stability, and UV photodegradation.">
+    <title>Photon Runner</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="hololith-game-standalone">
+    <main class="game-shell">
+      <nav class="game-site-nav" aria-label="Site navigation"><a href="../../">← HoloLith homepage</a></nav>
+      <details class="game-explainer"><summary>How the molecular switching works</summary><p>Green, blue and violet photons can switch azobenzene between TRANS and CIS. Red light helps stabilize the molecule. Excessive UV exposure causes degradation. This is a simplified arcade model of photochemistry.</p></details>
+
+      <section class="topbar" aria-label="Game panel">
+        <div>
+          <p class="panel-label">Live run</p>
+          <h2>Molecular state</h2>
+        </div>
+        <div class="stats" aria-live="polite">
+          <div><span>Time</span><strong id="score">0s</strong></div>
+          <div><span>Damage</span><strong id="energy">0%</strong></div>
+          <div><span>State</span><strong id="state">TRANS</strong></div>
+          <div><span>Speed</span><strong id="speed">315</strong></div>
+        </div>
+      </section>
+
+      <section class="play-area">
+        <canvas id="game" width="960" height="540" aria-label="Photon Runner, an endless azobenzene arcade game"></canvas>
+        <div class="overlay" id="overlay">
+          <h2>Survive the photon flow</h2>
+          <p>Move only. Green, blue, and violet photons toggle azobenzene between TRANS and CIS. Red photons restore stability without isomerizing.</p>
+          <button id="startButton" type="button">Start Run</button>
+        </div>
+      </section>
+
+      <section class="touch-controls" aria-label="Touch controls">
+        <button type="button" data-action="up">Up</button>
+        <button type="button" data-action="down">Down</button>
+        <button type="button" data-action="left">Left</button>
+        <button type="button" data-action="right">Right</button>
+      </section>
+
+      <section class="controls" aria-label="Controls">
+        <div class="keys"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>or arrow keys to move</span></div>
+        <div class="legend">
+          <span><i class="red"></i>Red: stabilization</span>
+          <span><i class="green"></i>Green: reversible isomerization</span>
+          <span><i class="blue"></i>Blue: reversible isomerization</span>
+          <span><i class="uv"></i>Violet/UV: isomerization + photodegradation</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>

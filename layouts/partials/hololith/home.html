@@ -1,0 +1,66 @@
+{{/* Homepage: a single coherent layout, independent of Hugo Blox widget CSS.
+     Keep this order aligned with config/_default/menus.yaml. */}}
+<article class="hl-home">
+  <header class="hl-hero hl-surface">
+    <div class="hl-hero__content">
+      <p class="hl-eyebrow">Research group · HoloLith</p>
+      <h1>Light shapes matter.</h1>
+      <p class="hl-lead">Exploring holographic lithography, advanced optics and functional materials.</p>
+      <div class="hl-actions"><a class="hl-btn hl-btn--primary" href="{{ "projects/" | relURL }}">Explore our research <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="hl-hero__aside" aria-hidden="true"><span class="hl-orbit hl-orbit--a"></span><span class="hl-orbit hl-orbit--b"></span><span class="hl-orbit hl-orbit--c"></span><span class="hl-hero__mark">H<span>·</span>L</span></div>
+  </header>
+
+  {{ $sections := slice
+    (dict "key" "people" "name" "People" "path" "people/" "kicker" "01 / The team" "intro" "A diverse group of researchers working at the intersection of photonics, materials and fabrication." "action" "Meet our people")
+    (dict "key" "projects" "name" "Projects" "path" "projects/" "kicker" "02 / What we do" "intro" "From light-driven processes to functional microstructures: explore our current research directions." "action" "All projects")
+    (dict "key" "publications" "name" "Publications" "path" "publication/" "kicker" "03 / Research output" "intro" "Peer-reviewed papers and scientific contributions from the HoloLith group." "action" "All publications")
+    (dict "key" "news" "name" "News" "path" "post/" "kicker" "04 / Updates" "intro" "Latest announcements and highlights from our research activities." "action" "All news")
+    (dict "key" "events" "name" "Events" "path" "event/" "kicker" "05 / Our calendar" "intro" "Conferences, seminars and opportunities to meet the group." "action" "All events")
+    (dict "key" "gallery" "name" "Gallery" "path" "gallery/" "kicker" "06 / Behind the scenes" "intro" "A visual look at the people and places behind our work." "action" "Explore gallery")
+    (dict "key" "play" "name" "Play" "path" "game/play/" "kicker" "07 / Explore through play" "intro" "Photon Runner: a small arcade experience inspired by azobenzene photoisomerization." "action" "Play Photon Runner")
+    (dict "key" "contact" "name" "Contact" "path" "contact/" "kicker" "08 / Get in touch" "intro" "Questions, potential collaborations or research enquiries? Reach out to HoloLith." "action" "Contact the group")
+  }}
+  <div class="hl-section-list">
+    {{ range $sections }}
+    <section class="hl-preview hl-surface" id="home-{{ .key }}" aria-labelledby="heading-{{ .key }}">
+      <div class="hl-preview__intro">
+        <p class="hl-eyebrow">{{ .kicker }}</p>
+        <h2 id="heading-{{ .key }}">{{ .name }}</h2>
+        <p>{{ .intro }}</p>
+        {{ if not (in (slice "gallery" "play" "contact") .key) }}<a class="hl-btn hl-btn--outline" href="{{ .path | relURL }}">{{ .action }} <span aria-hidden="true">↗</span></a>{{ end }}
+      </div>
+      <div class="hl-preview__content">
+        {{ if eq .key "people" }}
+          {{/* Original group photograph from the former Hugo Blox hero. */}}
+          {{ $photo := resources.Get "media/welcome.jpg" }}
+          {{ with $photo }}
+          {{ $preview := .Resize "1200x webp q82" }}
+          <a class="hl-group-photo" href="{{ "people/" | relURL }}" aria-label="Meet the HoloLith group">
+            <img src="{{ $preview.RelPermalink }}" alt="HoloLith research group photo" loading="lazy" width="{{ $preview.Width }}" height="{{ $preview.Height }}">
+          </a>
+          {{ end }}
+        {{ else if eq .key "projects" }}
+          {{ $pages := where site.RegularPages "Section" "projects" }}
+          <div class="hl-preview__items">{{ range first 3 ($pages.ByDate.Reverse) }}<a class="hl-mini-card" href="{{ .RelPermalink }}"><span class="hl-mini-card__label">Research project</span><strong>{{ .Title }}</strong><span aria-hidden="true">↗</span></a>{{ else }}<p class="hl-fallback">Explore the group's research activities.</p>{{ end }}</div>
+        {{ else if eq .key "publications" }}
+          {{ $pages := where site.RegularPages "Section" "publication" }}
+          <div class="hl-preview__items">{{ range first 3 ($pages.ByDate.Reverse) }}<a class="hl-mini-card" href="{{ .RelPermalink }}"><span class="hl-mini-card__label">{{ .Date.Format "2006" }} · Publication</span><strong>{{ .Title }}</strong><span aria-hidden="true">↗</span></a>{{ else }}<p class="hl-fallback">Read our published research.</p>{{ end }}</div>
+        {{ else if eq .key "news" }}
+          {{ $pages := where site.RegularPages "Section" "post" }}
+          <div class="hl-preview__items">{{ range first 3 ($pages.ByDate.Reverse) }}<a class="hl-mini-card" href="{{ .RelPermalink }}"><span class="hl-mini-card__label">{{ .Date.Format "02 Jan 2006" }}</span><strong>{{ .Title }}</strong><span aria-hidden="true">↗</span></a>{{ else }}<p class="hl-fallback">Latest group updates will appear here.</p>{{ end }}</div>
+        {{ else if eq .key "events" }}
+          {{ $pages := where site.RegularPages "Section" "event" }}
+          <div class="hl-preview__items">{{ range first 3 ($pages.ByDate.Reverse) }}<a class="hl-mini-card" href="{{ .RelPermalink }}"><span class="hl-mini-card__label">{{ .Date.Format "02 Jan 2006" }} · Event</span><strong>{{ .Title }}</strong><span aria-hidden="true">↗</span></a>{{ else }}<p class="hl-fallback">Explore seminars and group events.</p>{{ end }}</div>
+        {{ else if eq .key "gallery" }}
+          <a class="hl-feature-link hl-feature-link--gallery" href="{{ "gallery/" | relURL }}"><span class="hl-feature-link__symbol" aria-hidden="true">◌</span><strong>Life in the lab</strong><small>See the gallery <span aria-hidden="true">↗</span></small></a>
+        {{ else if eq .key "play" }}
+          <a class="hl-feature-link hl-feature-link--play" href="{{ "game/play/" | relURL }}"><span class="hl-feature-link__symbol" aria-hidden="true">✳</span><strong>Photon Runner</strong><small>Start the game <span aria-hidden="true">↗</span></small></a>
+        {{ else if eq .key "contact" }}
+          <a class="hl-feature-link hl-feature-link--contact" href="{{ "contact/" | relURL }}"><span class="hl-feature-link__symbol" aria-hidden="true">↗</span><strong>Let's collaborate</strong><small>Get in touch</small></a>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+  </div>
+</article>

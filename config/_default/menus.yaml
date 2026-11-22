@@ -1,24 +1,26 @@
-# Navigation Links
-#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
-#     desired widget in your `content/home/` folder.
-#   The weight parameter defines the order that the links will appear in.
-
+# One navigation order shared with the homepage (layouts/partials/hololith/home.html).
 main:
-  - name: News
-    url: post
-    weight: 10
   - name: People
-    url: people
+    url: people/
+    weight: 10
+  - name: Projects
+    url: projects/
     weight: 20
-  - name: Events
-    url: event
-    weight: 30
   - name: Publications
-    url: publication
+    url: publication/
+    weight: 30
+  - name: News
+    url: post/
     weight: 40
-  - name: Gallery
-    url: gallery
+  - name: Events
+    url: event/
     weight: 50
-  - name: Contact
-    url: contact
+  - name: Gallery
+    url: gallery/
     weight: 60
+  - name: Play
+    url: game/play/
+    weight: 70
+  - name: Contact
+    url: contact/
+    weight: 80

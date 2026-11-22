@@ -1,0 +1,35 @@
+name: Sync Zotero bibliography
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * *'
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: zotero-bibliography
+  cancel-in-progress: false
+jobs:
+  zotero:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch bibliography (read-only Zotero API)
+        env:
+          ZOTERO_GROUP_ID: '6421238'
+          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+        run: python scripts/sync_zotero.py
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: automate/zotero-bibliography
+          delete-branch: true
+          commit-message: 'content: sync bibliography from Zotero'
+          title: 'Publications: synchronize Zotero bibliography'
+          body: |
+            Review added, modified, and removed records. Do not merge until publication
+            counts and identifiers have been checked. After merging, the existing
+            import-publications workflow will open a separate PR with Hugo pages.
+          add-paths: publications.bib

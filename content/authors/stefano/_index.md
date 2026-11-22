@@ -26,9 +26,7 @@ organizations:
 
 # Short bio (displayed in user profile preview)
 
-bio: Professor Stefano Luigi Oscurato is a physicist specializing in photonics, light–matter interaction, and holographic surface structuring. His research centers on azobenzene-based photoresponsive polymers, reconfigurable diffractive optics, holography, and structured light.
-He leads the Holo-Lithography Research Group at the Department of Physics “Ettore Pancini” of the University of Naples Federico II, where his team develops holographic and laser-based methods for polymer surface micro/nanostructuring, reconfigurable diffractive micro-optics, and hybrid imaging systems in collaboration with international partners across materials science, optical characterization, computational imaging, and meta-optics.
-Prof. Oscurato has been Principal Investigator of several projects funded by the Italian Ministry of University and Research. He currently leads the ERC Starting Grant project HyperMaSH and will coordinate the EIC Pathfinder Open project HoloMorPh from April 2026. He has given numerous invited talks at major conferences and serves as Associate Editor of Light: Advanced Manufacturing and on the Early Career Advisory Board of RSC Applied Interfaces.
+bio: Professor Stefano Luigi Oscurato is a physicist specializing in photonics, light–matter interaction, and holographic surface structuring. His research centers on azobenzene-based photoresponsive polymers, reconfigurable diffractive optics, holography, and structured light. He leads the Holo-Lithography Research Group at the Department of Physics “Ettore Pancini” of the University of Naples Federico II, where his team develops holographic and laser-based methods for polymer surface micro/nanostructuring, reconfigurable diffractive micro-optics, and hybrid imaging systems in collaboration with international partners across materials science, optical characterization, computational imaging, and meta-optics. Prof. Oscurato has been Principal Investigator of several projects funded by the Italian Ministry of University and Research. He currently leads the ERC Starting Grant project HyperMaSH and will coordinate the EIC Pathfinder Open project HoloMorPh from April 2026. He has given numerous invited talks at major conferences and serves as Associate Editor of Light Advanced Manufacturing and on the Early Career Advisory Board of RSC Applied Interfaces.
 
 
 
@@ -41,26 +39,26 @@ interests: # <--------------
 education: # <-------------- EDIT BELOW (YOU CAN ADD MORE ENTRIES)
   courses:
    - course: Associate Professor
-      institution: University of Naples "Federico II"
-      year: 2025 - ongoing
-    - course: Assistant Professor
-      institution: University of Naples "Federico II"
-      year: 2021 - 2015
-     - course: Post-Doctoral Research Fellow
-      institution: Univeristy of Naples "Federico II"
-      year: 2017 - 2020
-    - course: Post-Doctoral Research Fellow
-      institution: Harverd University
-      year: 2018
-    - course: PhD in Physics
-      institution: Univeristy of Naples "Federico II"
-      year: 2014 - 2017
-    - course: Master degree
-      institution: University of Naples "Federico II"
-      year: 2012 - 2014
-    - course: Bachelor degree
-      institution: University of Naples "Federico II"
-      year: 2009 - 2012
+     institution: University of Naples "Federico II"
+     year: 2025 - ongoing
+   - course: Assistant Professor
+     institution: University of Naples "Federico II"
+     year: 2021 - 2015
+   - course: Post-Doctoral Research Fellow
+     institution: Univeristy of Naples "Federico II"
+     year: 2017 - 2020
+   - course: Post-Doctoral Research Fellow
+     institution: Harverd University
+     year: 2018
+   - course: PhD in Physics
+     institution: Univeristy of Naples "Federico II"
+     year: 2014 - 2017
+   - course: Master degree
+     institution: University of Naples "Federico II"
+     year: 2012 - 2014
+   - course: Bachelor degree
+     institution: University of Naples "Federico II"
+     year: 2009 - 2012
 
 
 # Social/Academic Networking

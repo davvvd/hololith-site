@@ -1,0 +1,62 @@
+{{/* Author profile box without avatar */}}
+
+{{/* Don't show author box on normal pages or if author box disabled. */}}
+{{ if ne .Type "page" | and (not (or (eq site.Params.profile false) (eq .Params.profile false))) }}
+
+{{ $authors := .Params.authors }}
+
+{{/* If authors not set, fallback to superuser/owner from Scratch */}}
+{{ if (not $authors) }}
+  {{ $superuser := .Scratch.Get "superuser_slug" }}
+  {{ if $superuser }}
+    {{ $authors = (slice $superuser) }}
+  {{ end }}
+{{ end }}
+
+{{ if $authors }}
+  {{ range $idx, $slug := $authors }}
+    {{ $profile := partial "functions/get_author_profile" $slug }}
+    {{ if $profile.has_data }}
+      {{ $profile_url := printf "/authors/%s/" $profile.slug }}
+      {{ $site_type := site.Params.hugoblox.identity.type | humanize | default "Person" }}
+      {{ if and (eq $site_type "Person") ($profile.is_owner) }}
+        {{ $profile_url = site.BaseURL }}
+      {{ end }}
+
+<div class="flex pt-12 pb-4">
+  <div class="place-self-center">
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      {{ i18n "authors" }}
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      <span class="inline-block">
+        {{ if $profile_url }}<a href="{{ $profile_url }}" class="no-underline">{{ end }}
+        {{ $profile.title }}
+        {{ if $profile_url }}</a>{{ end }}
+      </span>
+      {{- with $profile.pronouns -}}
+        <span class="text-sm font-normal text-gray-600 dark:text-gray-400 ml-1 inline-block">({{ . }})</span>
+      {{- end -}}
+    </div>
+
+    {{ with $profile.role }}
+    <div class="text-sm font-bold text-neutral-700 dark:text-neutral-300">
+    {{ . | markdownify | emojify }}
+    </div>
+    {{ end }}
+
+    {{ with $profile.bio }}
+    <div class="text-sm text-neutral-700 dark:text-neutral-300">{{ . | markdownify | emojify }}</div>
+    {{ end }}
+
+    <div class="text-2xl sm:text-lg pt-1">
+      {{ partial "social_links" (dict "Params" (dict "profiles" $profile.links)) }}
+    </div>
+  </div>
+</div>
+
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ end }}

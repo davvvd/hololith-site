@@ -17,7 +17,7 @@
 {{ $bg_mp4_exists := fileExists "static/media/backgrounds/animated-bg.mp4" }}
 {{ $bg_gif_exists := fileExists "static/media/backgrounds/animated-bg.gif" }}
 {{ $show_animated_bg := or (or $bg_webm_exists $bg_mp4_exists) $bg_gif_exists }}
-<body id="top" data-spy="scroll" {{ if $show_navbar }}data-offset="70"{{end}} data-target="{{ if or .IsHome (eq .Type "widget_page") | and $highlight_active_link }}#navbar-main{{else}}#TableOfContents{{end}}" class="page-wrapper {{with .Params.design.css_class}}{{.}}{{end}} {{ if not $show_navbar }}no-navbar{{end}} {{ if $show_affiliations }}has-affiliations-bar{{end}} {{ if $show_animated_bg }}has-animated-bg{{end}}" {{with .File}}data-wc-page-id="{{.UniqueID}}"{{end}} {{with .Params.design.css_style}}style="{{. | safeCSS}}"{{end}}>
+<body id="top" data-spy="scroll" {{ if $show_navbar }}data-offset="70"{{end}} data-target="{{ if or .IsHome (eq .Type "widget_page") | and $highlight_active_link }}#navbar-main{{else}}#TableOfContents{{end}}" class="page-wrapper {{ if not .IsHome }}hl-interior {{ end }}{{ if eq .Section "play" }}hl-page-play {{ end }}{{with .Params.design.css_class}}{{.}}{{end}} {{ if not $show_navbar }}no-navbar{{end}} {{ if $show_affiliations }}has-affiliations-bar{{end}} {{ if $show_animated_bg }}has-animated-bg{{end}}" {{with .File}}data-wc-page-id="{{.UniqueID}}"{{end}} {{with .Params.design.css_style}}style="{{. | safeCSS}}"{{end}}>
 
   {{/* Initialise Hugo Blox. */}}
   {{ $js_license := printf "/*! Hugo Blox Builder v%s | https://hugoblox.com/ */\n" site.Data.hugoblox.version }}
@@ -48,7 +48,7 @@
   {{ if $show_animated_bg }}
   <div class="animated-bg page-background-stage" aria-hidden="true">
     {{ if or $bg_webm_exists $bg_mp4_exists }}
-      <video class="animated-bg__media" autoplay muted loop playsinline preload="metadata">
+      <video class="animated-bg__media" autoplay muted loop playsinline preload="auto" aria-hidden="true">
         {{ if $bg_webm_exists }}<source src="{{ "media/backgrounds/animated-bg.webm" | relURL }}" type="video/webm">{{ end }}
         {{ if $bg_mp4_exists }}<source src="{{ "media/backgrounds/animated-bg.mp4" | relURL }}" type="video/mp4">{{ end }}
       </video>
@@ -84,7 +84,11 @@
         </div>
       {{ end }}
 
-      {{ block "main" . }}{{ end }}
+      {{ if .IsHome }}
+        {{ partial "hololith/home.html" . }}
+      {{ else }}
+        {{ block "main" . }}{{ end }}
+      {{ end }}
     </div>
 
     <div class="page-footer">

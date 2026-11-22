@@ -1,0 +1,102 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: davvvd/hololith-site
+  branch: main
+  # REQUIRED: configure your own trusted OAuth callback before enabling login.
+  base_url: https://REPLACE-WITH-YOUR-OAUTH-PROXY.example
+  auth_endpoint: auth
+
+publish_mode: editorial_workflow
+site_url: https://hololith-lab.unina.it
+media_folder: static/uploads
+public_folder: /uploads
+
+collections:
+  - name: news
+    label: News
+    label_singular: News article
+    folder: content/post
+    create: true
+    path: "{{slug}}/index"
+    extension: md
+    format: frontmatter
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: Date, name: date, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ"}
+      - {label: Summary, name: summary, widget: text, required: false}
+      - label: Image settings
+        name: image
+        widget: object
+        required: false
+        fields:
+          - {label: Focal point, name: focal_point, widget: select, options: [Center, Top, Bottom, Left, Right], required: false, default: Center}
+      - {label: Tags, name: tags, widget: list, required: false}
+      - {label: Draft, name: draft, widget: boolean, required: false, default: false}
+      - {label: Article, name: body, widget: markdown}
+
+  - name: events
+    label: Events
+    label_singular: Event
+    folder: content/event
+    create: true
+    path: "{{slug}}/index"
+    extension: md
+    format: frontmatter
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: Event name, name: event, widget: string, required: false}
+      - {label: External event URL, name: event_url, widget: string, required: false}
+      - {label: Location, name: location, widget: string, required: false}
+      - {label: Starts, name: date, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ"}
+      - {label: Ends, name: date_end, widget: datetime, format: "YYYY-MM-DDTHH:mm:ssZ", required: false}
+      - {label: All-day event, name: all_day, widget: boolean, default: false, required: false}
+      - {label: Summary, name: summary, widget: text, required: false}
+      - {label: Tags, name: tags, widget: list, required: false}
+      - {label: Draft, name: draft, widget: boolean, required: false, default: false}
+      - {label: Description, name: body, widget: markdown}
+
+  - name: projects
+    label: Projects
+    label_singular: Research project
+    folder: content/projects
+    create: true
+    path: "{{slug}}/index"
+    extension: md
+    format: frontmatter
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - {label: Project name, name: title, widget: string}
+      - {label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", required: false}
+      - {label: Short summary, name: summary, widget: text, required: false}
+      - label: Image settings
+        name: image
+        widget: object
+        required: false
+        fields:
+          - {label: Focal point, name: focal_point, widget: select, options: [Center, Top, Bottom, Left, Right], required: false}
+      - {label: Draft, name: draft, widget: boolean, required: false, default: false}
+      - {label: Project description, name: body, widget: markdown}
+
+  - name: gallery
+    label: Gallery
+    files:
+      - label: Photo gallery
+        name: gallery
+        file: data/gallery.yaml
+        fields:
+          - label: Photographs
+            name: photos
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Photograph, name: image, widget: image, hint: 'Upload a real HoloLith photo.'}
+              - {label: Alt text, name: alt, widget: string, required: false}
+              - {label: Caption, name: caption, widget: text, required: false}

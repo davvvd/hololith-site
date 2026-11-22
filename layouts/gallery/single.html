@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="hl-gallery-page hl-surface">
+  <header class="hl-gallery-page__head">
+    <p class="hl-eyebrow">HoloLith / Inside the lab</p>
+    <h1>{{ .Title }}</h1>
+    <p>Research, people and moments from our group.</p>
+  </header>
+  {{ $gallery := site.Data.gallery }}
+  {{ with $gallery.photos }}
+  <div class="hl-gallery-grid">
+    {{ range . }}
+      {{ if .image }}
+      <figure class="hl-gallery-card">
+        <a href="{{ .image | relURL }}" target="_blank" rel="noopener noreferrer" aria-label="Open photograph: {{ .title }}">
+          <img loading="lazy" src="{{ .image | relURL }}" alt="{{ default .title .alt }}">
+        </a>
+        <figcaption><strong>{{ .title }}</strong>{{ with .caption }}<span>{{ . }}</span>{{ end }}</figcaption>
+      </figure>
+      {{ end }}
+    {{ end }}
+  </div>
+  {{ else }}
+  <p class="hl-gallery-empty">The group photo gallery is being curated. Check back soon.</p>
+  {{ end }}
+</article>
+{{ end }}

@@ -72,7 +72,10 @@ function initRevealAnimations(reducedMotion) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        entry.target.classList.toggle("is-visible", entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
       });
     },
     { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
@@ -130,6 +133,12 @@ function initAnimatedBackgroundMedia() {
       animatedBackground.classList.add("is-loaded");
     }
   };
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    media.pause();
+    markLoaded();
+    return;
+  }
 
   const tryPlay = () => {
     const promise = media.play();

@@ -64,7 +64,7 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
               {{- .Pre -}}<span>{{ .Name | safeHTML }}</span>{{- .Post -}}
-              <span class="caret"></span>
+              <i class="fas fa-chevron-down nav-caret-icon ml-1" style="font-size: 0.75rem; vertical-align: middle; opacity: 0.85;"></i>
             </a>
             <div class="dropdown-menu">
               {{ range .Children }}

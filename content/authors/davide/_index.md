@@ -19,7 +19,7 @@ role: PhD Student
 # Organizations/Affiliations
 organizations:
   - name: University of Naples "Federico II"
-    url: ''
+    url: 'https://www.fisica.unina.it/'
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include computational intelligence and quantum computing.

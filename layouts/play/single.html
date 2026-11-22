@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="hl-game-redirect hl-surface">
+  <p class="hl-eyebrow">Interactive science</p>
+  <h1>Photon Runner</h1>
+  <p>The game now opens in its own full-size page for easier play.</p>
+  <a class="hl-btn hl-btn--primary" href="{{ "game/play/" | relURL }}">Open Photon Runner →</a>
+</div>
+<script>window.location.replace({{ "game/play/" | relURL | jsonify | safeJS }});</script>
+{{ end }}
